@@ -144,7 +144,7 @@ bool switchIndexLinear(size_t m, Pred pred)
 
 // O(logN)
 template<class... Types, int... Is, class Pred>
-bool switchSequence(size_t m, std::integer_sequence<int, Is...>, Pred pred)
+bool switchSequence(int m, std::integer_sequence<int, Is...>, Pred pred)
 {
     static_assert( sizeof...(Is) == sizeof...(Types), "length of integer sequence should match number of types" );
     static_assert( isIncreasing<Is...>(), "integer sequence should be monotonically increasing" );
@@ -153,7 +153,7 @@ bool switchSequence(size_t m, std::integer_sequence<int, Is...>, Pred pred)
 
 // O(N)
 template<class... Types, int... Is, class Pred>
-bool switchSequenceLinear(size_t m, std::integer_sequence<int, Is...>, Pred pred)
+bool switchSequenceLinear(int m, std::integer_sequence<int, Is...>, Pred pred)
 {
     static_assert( sizeof...(Is) == sizeof...(Types), "length of integer sequence should match number of types" );
     static_assert( isIncreasing<Is...>(), "integer sequence should be monotonically increasing" );
